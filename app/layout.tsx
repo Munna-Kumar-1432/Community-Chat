@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/provider/theme-provider";
 import { cn } from "@/lib/utils";
+import { ModalProvider } from "@/components/provider/modal-provider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <ModalProvider/>
             {children}
           </ThemeProvider>
         </body>
